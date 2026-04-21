@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airbnb Clone</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <h1>
+        Hello, <%= name %>
+    </h1>
+    <div>
+        <% for ( l of sampleListing) { %>
+            <h4 class="title">
+                <%= l.title %>
+            </h4>
+            <span class="desc">
+                <%= l.description %>
+            </span><br>
+            <span class="">
+                <%= l.price %>
+            </span><br>
+            <span>
+                <%= l.location %>
+            </span><br>
+            <span>
+                <%= l.country %>
+            </span>
+                    <% } %>
+    </div>
+
+</body>
+
+</html>

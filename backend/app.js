@@ -1,4 +1,6 @@
 //Imports
+const path = require("path");
+
 
 //Express connection
 const express = require("express");
@@ -18,6 +20,17 @@ main().then(()=>{
 }).catch(err => 
     console.log("Err : ",err)
 );
+
+//Middlewares
+app.set("view engine","ejs");
+app.set("views", path.join(__dirname,"views"))
+
+//show all
+app.get("/listings",async (req,res)=>{
+    let sampleListing = await Listing.find({});
+    // console.log(sampleListing); 
+    res.render("index",{ name:"Akash", sampleListing});
+});
 
 // app.get("/testListing", async (req,res)=>{
 //     const sampleListing = new Listing({
