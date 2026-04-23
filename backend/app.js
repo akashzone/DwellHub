@@ -85,6 +85,16 @@ let {id} = req.params;
   res.redirect(`/listings/${id}`)
 })
 
+
+//Delete route - to delete listings..
+
+app.delete("/listings/:id", async (req,res)=>{
+    let {id} = req.params;
+    let deletedListing = await Listing.findByIdAndDelete(id)
+    console.log("deletedListing :",deletedListing );
+    res.redirect(`/listings`)
+})
+
 // app.get("/testListing", async (req,res)=>{
 //     const sampleListing = new Listing({
 //         title: "New Home - 2",

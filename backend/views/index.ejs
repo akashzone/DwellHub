@@ -10,14 +10,16 @@
 
 <body>
     <h1>
-        Listings 
+        Listings
     </h1>
     <ul>
         <% for ( l of sampleListing) { %>
             <li class="title">
-                <a href="/listings/<%= l._id %>"><%= l.title %></a>
+                <a href="/listings/<%= l._id %>">
+                    <%= l.title %>
+                </a>
             </li>
-        <% } %>
+            <% } %>
     </ul>
     <form method="GET" action="/listings/new">
         <button type="submit">NEW</button>
