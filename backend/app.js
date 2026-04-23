@@ -6,6 +6,8 @@ const express = require("express");
 const app = express();
 const PORT = 8080;
 
+
+
 //Mongoose connection
 const mongoose = require("mongoose");
 const MONGO_URL = "mongodb://127.0.0.1:27017/DwellHub";
@@ -23,6 +25,7 @@ main()
 //Middlewares
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+app.use(express.urlencoded({ extended: true}));
 
 //show all
 app.get("/listings", async (req, res) => {
@@ -30,13 +33,32 @@ app.get("/listings", async (req, res) => {
   res.render("index", { sampleListing });
 });
 
+//create route
+app.get("/listings/new", async (req, res) => {
+  res.render("new.ejs");
+});
+
+app.post("/listings", async (req, res) => {
+  let { title, description, price, location, country } = req.body;
+  let newListing = new Listing({
+    title: title,
+    description: description,
+    price: price,
+    location: location,
+    country: country,
+  });
+  await Listing.insertOne(newListing);
+  console.log(newListing);
+  res.redirect("/listings");
+});
+
 // show route - shows individual listing
-app.get("/listings/:id", async (req,res)=>{
-    let {id} = req.params;
-    let listing = await Listing.findById(id);
-    console.log(listing);
-    res.render("show.ejs",{listing});
-})
+app.get("/listings/:id", async (req, res) => {
+  let { id } = req.params;
+  let listing = await Listing.findById(id);
+  console.log(listing);
+  res.render("show.ejs", { listing });
+});
 
 // app.get("/testListing", async (req,res)=>{
 //     const sampleListing = new Listing({

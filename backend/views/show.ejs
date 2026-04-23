@@ -14,7 +14,7 @@
     <div class="listing_info">
         <h3> Title : <%= listing.title %></h3>
         <p> Description : <%= listing.description %></p>
-        <span> Price : <%= listing.price%></span><br><br>
+        <span> Price : &#8377; <%= listing.price.toLocaleString("en-IN") %></span><br><br>
         <span> Location : <%= listing.location %></span><br><br>
         <span> Country : <%= listing.country %></span><br><br>
         <button class="edit">
