@@ -1,5 +1,6 @@
 //Imports
 const path = require("path");
+const methodOverride = require("method-override");
 
 //Express connection
 const express = require("express");
@@ -26,6 +27,7 @@ main()
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true}));
+app.use(methodOverride("_method"));
 
 //show all
 app.get("/listings", async (req, res) => {
@@ -48,7 +50,7 @@ app.post("/listings", async (req, res) => {
     country: country,
   });
   await Listing.insertOne(newListing);
-  console.log(newListing);
+//   console.log(newListing);
   res.redirect("/listings");
 });
 
@@ -56,9 +58,32 @@ app.post("/listings", async (req, res) => {
 app.get("/listings/:id", async (req, res) => {
   let { id } = req.params;
   let listing = await Listing.findById(id);
-  console.log(listing);
+//   console.log(listing);
   res.render("show.ejs", { listing });
 });
+
+// edit route - to edit listing.
+app.get("/listings/:id/edit",async (req,res)=>{
+    let {id} = req.params;
+    let listing = await Listing.findById(id);
+    res.render("edit.ejs",{listing});
+});
+
+app.put("/listings/:id", async (req,res)=>{
+let {id} = req.params;
+  let { title, description, price, location, country } = req.body;
+  console.log(title);
+  let updatedListing = {
+    title: title,
+    description: description,
+    price: price,
+    location: location,
+    country: country,
+  };
+  console.log(updatedListing);
+  await Listing.findByIdAndUpdate(id, {...updatedListing})
+  res.redirect(`/listings/${id}`)
+})
 
 // app.get("/testListing", async (req,res)=>{
 //     const sampleListing = new Listing({
