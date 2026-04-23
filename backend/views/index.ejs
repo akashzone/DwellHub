@@ -10,26 +10,14 @@
 
 <body>
     <h1>
-        Hello, <%= name %>
+        Listings 
     </h1>
-    <div>
+    <ul>
         <% for ( l of sampleListing) { %>
-            <h4 class="title">
-                <%= l.title %>
-            </h4>
-            <span class="desc">
-                <%= l.description %>
-            </span><br>
-            <span class="">
-                <%= l.price %>
-            </span><br>
-            <span>
-                <%= l.location %>
-            </span><br>
-            <span>
-                <%= l.country %>
-            </span>
-                    <% } %>
+            <li class="title">
+                <a href="/listings/<%= l._id %>"><%= l.title %></a>
+            </li>
+        <% } %>
     </div>
 
 </body>
