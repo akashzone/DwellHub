@@ -4,12 +4,11 @@ body {
 }
 
 .navbar {
-  height: 5rem;
+  min-height: 5rem;
   background-color: white;
 }
 
 .nav-link {
-  font-weight: 500 !important;
   color: #222222 !important;
   border-radius: 20px;
   margin-right: 10px;
@@ -18,4 +17,36 @@ body {
 .navbar-brand i {
   font-size: 1.5rem;
   color: #e04e53;
+}
+
+.footer{
+    height: 8rem;
+    color: #222222;
+    background-color: rgb(230, 228, 228);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mb{
+    margin-bottom: 10px;
+}
+
+.social-links i{
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.social-links i:hover{
+    color:#e04e53;
+}
+
+.terms a{
+    text-decoration: none;
+    color: #222222;
+}
+
+.terms a:hover{
+    text-decoration: underline;
 }
