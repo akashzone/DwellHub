@@ -28,6 +28,7 @@ main()
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true}));
+app.use(express.static(path.join(__dirname,"public")));
 app.use(methodOverride("_method"));
 app.engine("ejs",ejsMate)
 
@@ -35,6 +36,12 @@ app.engine("ejs",ejsMate)
 app.get("/listings", async (req, res) => {
   let sampleListing = await Listing.find({});
   res.render("index", { sampleListing });
+});
+
+//home route
+
+app.get("/",(req,res)=>{
+  res.send("root route working");
 });
 
 //create route

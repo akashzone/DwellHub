@@ -1,0 +1,21 @@
+body {
+  background-color: pink;
+  color: #222222;
+}
+
+.navbar {
+  height: 5rem;
+  background-color: white;
+}
+
+.nav-link {
+  font-weight: 500 !important;
+  color: #222222 !important;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.navbar-brand i {
+  font-size: 1.5rem;
+  color: #e04e53;
+}
