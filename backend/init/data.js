@@ -176,10 +176,7 @@ const sampleListings = [
   {
     title: "Rustic Log Cabin in Montana",
     description: "Unplug and unwind...",
-    image:
-      "https://images.unsplash.com/photo-1586375300773-8384e3e4916f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-    price: 1100,
-    location: "Montana",
+    image:"https://images.unsplash.com/photo-1586375300773-8384e3e4916f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
     country: "United States",
   },
 ];

@@ -17,6 +17,7 @@ main().then(()=>{
 
 async function initDB(){
     await Listing.deleteMany({});
+    console.log(initData.data);
     await Listing.insertMany(initData.data);
     console.log("Saved sample data successfully.");
 }

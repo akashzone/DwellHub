@@ -50,3 +50,31 @@ body {
 .terms a:hover{
     text-decoration: underline;
 }
+
+.card{
+  border: none !important;
+}
+
+.listing-link{
+  text-decoration: none;
+}
+
+.container{
+  min-height: 100vh;
+}
+
+.listing-img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px 12px;
+}
+
+.listing-card {
+  overflow: hidden;
+}
+
+.card-body{
+  padding-left: 0px !important;
+  padding-top: 0px !important;
+}
