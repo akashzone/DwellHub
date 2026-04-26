@@ -1,37 +1,38 @@
+<%- layout("/layouts/boilerplate") %>
 
-<!DOCTYPE html>
-<html lang="en">
+    <body>
+       <div class="row col-8 offset-2 mt-5">
+        <h2>
+            Create new listing :
+        </h2>
+         <form class="" method="POST" action="/listings">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" name="title" class="form-control" placeholder="Enter title..">
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea type="text" name="description" class="form-control" placeholder="Description.."></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Image</label>
+                <input type="text" name="image" class="form-control" placeholder="Enter Image/URL..">
+            </div>
+            <div class="mb-3 col-4">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" name="price" class="form-control" placeholder="Enter price..">
+            </div>
+            <div class="mb-3 col-4">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" name="location" class="form-control" placeholder="Enter location..">
+            </div>
+            <div class="mb-3">
+                <label for="country" class="form-label">Country</label>
+                <input type="text" name="country" class="form-control" placeholder="Enter country..">
+            </div>
+            <button type="submit" class="btn btn-dark">Save</button>
+        </form>
+       </div>
+    </body>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Airbnb Clone</title>
-</head>
-
-<body>
-    <h1>
-        Create new listing :  
-    </h1>
-    <form method="POST" action="/listings">
-        Title : 
-        <input type="text" name="title" placeholder="Enter title..">
-        <br><br>
-        Description :
-        <textarea name="description" col="5" row="5">
-            Enter desrption..
-        </textarea>
-        <br><br>
-        Price :
-        <input type="number" name="price" placeholder="eg.999/night">
-        <br><br>
-        Location :
-        <input type="text" name="location" placeholder="eg.Mumbai, Chennai...">
-        <br><br>
-        Country :
-        <input type="text" name="country" placeholder="eg.India, Germany...">
-        <br><br>
-        <button type="submit">Save</button>
-    </form>
-</body>
-
-</html>
+    </html>
