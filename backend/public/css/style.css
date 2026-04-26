@@ -59,7 +59,7 @@ body {
   text-decoration: none;
 }
 
-.container{
+.container,.mainDiv{
   min-height: 100vh;
 }
 
@@ -77,4 +77,32 @@ body {
 .card-body{
   padding-left: 0px !important;
   padding-top: 0px !important;
+}
+
+.l_info{
+  text-align: center;
+}
+
+.listing_info{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 70vw;
+}
+
+.card-img-top{
+  height: 500px;
+  width: 700px !important;
+  object-fit: cover;
+  border-radius: 12px 12px;
+}
+
+.btns{
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn{
+  background-color: #e04e53 !important;
+  color: white !important;
 }

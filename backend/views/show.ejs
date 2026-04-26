@@ -1,24 +1,35 @@
 <%- layout("/layouts/boilerplate") %>
 
     <body>
-        <h1>
+        <div class="listing_info mt-4 mb-4">
+        <h2 class="l_info">
             Listing Info
-        </h1>
-        <div class="listing_info">
-            <h3> Title : <%= listing.title %>
-            </h3>
-            <p> Description : <%= listing.description %>
-            </p>
-            <span> Price : &#8377; <%= listing.price.toLocaleString("en-IN") %></span><br><br>
-            <span> Location : <%= listing.location %></span><br><br>
-            <span> Country : <%= listing.country %></span><br><br>
-            <form action="/listings/<%= listing._id %>/edit">
-                <button class="edit">
-                    Edit
-                </button>
-            </form>
-            <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
-                <button type="submit">DELETE</button>
-            </form>
+        </h2>
+            <div class="card">
+                <img src="<%= listing.image %>" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title py-2">
+                        <%= listing.title %>
+                    </h5>
+                    <p class="card-text">
+                        <span class="description">
+                            Descritpion : <%= listing.description %>
+                        </span><br>
+                        <span>Price : &#8377; <%= listing.price.toLocaleString("en-IN") %></span><br>
+                        <span> Location : <%= listing.location %></span><br>
+                        <span> Country : <%= listing.country %></span><br>
+                    </p>
+                    <div class="btns">
+                        <form action="/listings/<%= listing._id %>/edit">
+                        <button class=" btn edit-btn">
+                            Edit
+                        </button>
+                    </form>
+                    <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
+                        <button type="submit" class="btn btn-dark">DELETE</button>
+                    </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
